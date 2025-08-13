@@ -4,7 +4,7 @@ Welcome to **Coded by Praise**, a beginner-friendly website that teaches coding 
 
 ## 🌐 Live Demo
 Check out the live website here:  
-https://github.com/Praisenyalungu/coded-by-praise.git   
+https://praisenyalungu.github.io/coded-by-praise/   
 
 ## 📚 Lessons Included
 1. **Lesson1:** Variables & Data Types  
