@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 4 – JavaScript Basics</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #f4f4f4; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h1, h2 { color: #333; }
+    pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    .nav-buttons { margin-top: 20px; display: flex; justify-content: space-between; }
+    button { padding: 10px 20px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .quiz { margin-top: 20px; }
+    .quiz label { display: block; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 4: JavaScript Basics</h1>
+    <p>JavaScript adds interactivity and logic to your web pages. You can use it to handle user input, manipulate HTML, and create dynamic content.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>Variables & Data Types:</strong> Already learned, now used in JS.</li>
+      <li><strong>Functions:</strong> Reusable blocks of code.</li>
+      <li><strong>Events:</strong> Respond to user actions like clicks or typing.</li>
+      <li><strong>DOM Manipulation:</strong> Change HTML content dynamically with JS.</li>
+    </ul>
+
+    <h2>Example Code</h2>
+    <pre>
+// Function to greet user
+function greet() {
+  const name = prompt("Enter your name:");
+  alert("Hello, " + name + "!");
+}
+    </pre>
+
+    <h2>Interactive Quiz</h2>
+    <div class="quiz">
+      <p>1. Which function is used to display a pop-up message in JavaScript?</p>
+      <label><input type="radio" name="q1" value="console.log"> console.log()</label>
+      <label><input type="radio" name="q1" value="prompt"> prompt()</label>
+      <label><input type="radio" name="q1" value="alert"> alert()</label>
+      <button onclick="checkAnswer()">Check Answer</button>
+      <p id="quiz-result"></p>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson3.html"><button>&larr; Previous Lesson</button></a>
+      <a href="lesson5.html"><button>Next Lesson &rarr;</button></a>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const options = document.getElementsByName('q1');
+      let selected;
+      for (const opt of options) {
+        if (opt.checked) selected = opt.value;
+      }
+      const result = document.getElementById('quiz-result');
+      if (selected === 'alert') {
+        result.textContent = "Correct! ✅";
+        result.style.color = "green";
+      } else {
+        result.textContent = "Oops! The correct answer is 'alert()'. ❌";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

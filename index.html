@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coded by Praise</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Floating nav styles */
+    #floating-nav {
+      position: fixed;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      z-index: 999;
+    }
+    #floating-nav .float-tab {
+      background: #0d6efd;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      text-align: center;
+      transition: transform 0.2s, background 0.2s;
+    }
+    #floating-nav .float-tab.active, #floating-nav .float-tab:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* Modal fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">Coded by Praise</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#learn">Learn to Code</a></li>
+          <li class="nav-item"><a class="nav-link" href="#grace">Grace Nuggets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="vh-100 d-flex align-items-center text-center bg-primary text-white">
+    <div class="container">
+      <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Welcome to Coded by Praise</h1>
+      <p class="lead mt-3 animate__animated animate__fadeInUp">Learn coding, grow in faith, and shine your light in tech!</p>
+      <a href="#learn" class="btn btn-light btn-lg mt-4 shadow">Start Learning</a>
+    </div>
+  </section>
+
+  <!-- LEARN TO CODE -->
+  <section id="learn" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Learn to Code</h2>
+      <p class="lead mb-5">Beginner-friendly tutorials to help you code with confidence.</p>
+      <div class="row g-4 justify-content-center">
+
+        <div class="col-md-4">
+          <a href="Lesson1.html" class="text-decoration-none text-dark">
+            <div class="card shadow p-4 h-100">
+              <h5>Lesson 1: Variables & Data Types</h5>
+              <p>Start your coding journey by learning variables and data types.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="Lesson2.html" class="text-decoration-none text-dark">
+            <div class="card shadow p-4 h-100">
+              <h5>Lesson 2: HTML Basics</h5>
+              <p>Learn the building blocks of web pages with HTML.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="Lesson3.html" class="text-decoration-none text-dark">
+            <div class="card shadow p-4 h-100">
+              <h5>Lesson 3: CSS Basics</h5>
+              <p>Style your web pages beautifully with CSS.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="Lesson4.html" class="text-decoration-none text-dark">
+            <div class="card shadow p-4 h-100">
+              <h5>Lesson 4: JavaScript Basics</h5>
+              <p>Add interactivity and logic to your websites with JS.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="Lesson5.html" class="text-decoration-none text-dark">
+            <div class="card shadow p-4 h-100">
+              <h5>Lesson 5: Mini Project</h5>
+              <p>Apply what you’ve learned by building a small project.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <a href="Lesson6.html" class="text-decoration-none text-dark">
+            <div class="card shadow p-4 h-100">
+              <h5>Lesson 6: Mastery & Beyond</h5>
+              <p>Complete the course, unlock your certificate, and explore next steps.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GRACE NUGGETS -->
+  <section id="grace" class="bg-light py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">Daily Grace Nugget</h2>
+
+      <div id="nugget-section" class="nugget-card mb-4 p-4 rounded shadow bg-white">
+        <p id="nugget" class="lead fst-italic m-0">Click the button to get a daily dose of inspiration!</p>
+      </div>
+
+      <button id="new-nugget" class="btn btn-primary btn-lg mb-4 shadow-sm">Show a Random Nugget</button>
+
+      <h4 class="fw-bold mt-5">More Nuggets for You</h4>
+      <div id="extra-nuggets" class="row g-3 mt-3 justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm p-3 h-100 rounded cursor-pointer" onclick="showPopup(0)">Even Jesus paused for prayer – don’t skip your breaks!</div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm p-3 h-100 rounded cursor-pointer" onclick="showPopup(1)">Debugging: the tech version of faith-proofing.</div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card shadow-sm p-3 h-100 rounded cursor-pointer" onclick="showPopup(2)">Your code is like worship—in it, you create.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="nugget-modal" class="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content:center; align-items:center; z-index:1050;">
+      <div class="modal-content p-4 rounded shadow text-center bg-white" style="max-width:500px; animation:fadeIn 0.3s;">
+        <p id="modal-text" class="lead fst-italic mb-3"></p>
+        <button onclick="closePopup()" class="btn btn-primary btn-lg w-50 shadow-sm">Close</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-4">Contact Me</h2>
+      <p class="text-center lead mb-5">Let's connect and build something amazing!</p>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form id="contact-form" class="shadow p-4 rounded bg-white">
+            <div class="mb-3">
+              <label for="name" class="form-label fw-semibold">Name</label>
+              <input type="text" id="name" name="user_name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">Email</label>
+              <input type="email" id="email" name="user_email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label fw-semibold">Message</label>
+              <textarea id="message" name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+            <p id="form-status" class="mt-3 text-center"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <small>© 2025 Coded by Praise. All Rights Reserved.</small>
+  </footer>
+
+  <!-- Floating Navigation Tabs -->
+  <div id="floating-nav">
+    <a href="#home" class="float-tab">🏠 Home</a>
+    <a href="#learn" class="float-tab">💻 Learn</a>
+    <a href="#grace" class="float-tab">💌 Nuggets</a>
+    <a href="#contact" class="float-tab">📬 Contact</a>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+

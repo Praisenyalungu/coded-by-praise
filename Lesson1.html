@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1 – Variables & Data Types</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #f4f4f4; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h1, h2 { color: #333; }
+    pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    .nav-buttons { margin-top: 20px; display: flex; justify-content: space-between; }
+    button { padding: 10px 20px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .quiz { margin-top: 20px; }
+    .quiz label { display: block; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 1: Variables & Data Types</h1>
+    <p>Welcome to your first coding lesson! In this lesson, you'll learn what variables are, the different data types in JavaScript, and how to use them.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>Variables:</strong> Containers for storing data values.</li>
+      <li><strong>Data Types:</strong> Examples include strings, numbers, booleans, and arrays.</li>
+      <li><strong>Declaration:</strong> Using <code>let</code>, <code>const</code>, and <code>var</code> to create variables.</li>
+    </ul>
+
+    <h2>Example Code</h2>
+    <pre>
+// Declaring variables
+let name = "Praise";
+const age = 23;
+var isLearning = true;
+
+console.log(name, age, isLearning);
+    </pre>
+
+    <h2>Interactive Quiz</h2>
+    <div class="quiz">
+      <p>1. Which keyword is used to declare a constant?</p>
+      <label><input type="radio" name="q1" value="let"> let</label>
+      <label><input type="radio" name="q1" value="var"> var</label>
+      <label><input type="radio" name="q1" value="const"> const</label>
+      <button onclick="checkAnswer()">Check Answer</button>
+      <p id="quiz-result"></p>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="index.html"><button>&larr; Back to Lessons</button></a>
+      <a href="lesson2.html"><button>Next Lesson &rarr;</button></a>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const options = document.getElementsByName('q1');
+      let selected;
+      for (const opt of options) {
+        if (opt.checked) selected = opt.value;
+      }
+      const result = document.getElementById('quiz-result');
+      if (selected === 'const') {
+        result.textContent = "Correct! ✅";
+        result.style.color = "green";
+      } else {
+        result.textContent = "Oops! The correct answer is 'const'. ❌";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

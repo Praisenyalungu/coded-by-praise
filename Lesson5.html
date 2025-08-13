@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 5 – Mini Project</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #f4f4f4; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h1, h2 { color: #333; }
+    pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    .nav-buttons { margin-top: 20px; display: flex; justify-content: space-between; }
+    button { padding: 10px 20px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .quiz { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 5: Mini Project</h1>
+    <p>Now it’s time to apply everything you’ve learned. In this mini project, you will create a simple interactive webpage using HTML, CSS, and JavaScript.</p>
+
+    <h2>Project Steps</h2>
+    <ol>
+      <li>Create an HTML page with a heading and a paragraph.</li>
+      <li>Use CSS to style your page (colors, fonts, spacing).</li>
+      <li>Add a button that triggers a JavaScript alert saying “Well done!” when clicked.</li>
+    </ol>
+
+    <h2>Interactive Quiz</h2>
+    <div class="quiz">
+      <p>1. Which three technologies are you combining in this mini project?</p>
+      <label><input type="radio" name="q1" value="HTML,CSS,Python"> HTML, CSS, Python</label>
+      <label><input type="radio" name="q1" value="HTML,CSS,JS"> HTML, CSS, JS</label>
+      <label><input type="radio" name="q1" value="HTML,JS,Ruby"> HTML, JS, Ruby</label>
+      <button onclick="checkAnswer()">Check Answer</button>
+      <p id="quiz-result"></p>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson4.html"><button>&larr; Previous Lesson</button></a>
+      <a href="lesson6.html"><button>Next Lesson &rarr;</button></a>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const options = document.getElementsByName('q1');
+      let selected;
+      for (const opt of options) {
+        if (opt.checked) selected = opt.value;
+      }
+      const result = document.getElementById('quiz-result');
+      if (selected === 'HTML,CSS,JS') {
+        result.textContent = "Correct! ✅";
+        result.style.color = "green";
+      } else {
+        result.textContent = "Oops! The correct answer is 'HTML, CSS, JS'. ❌";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

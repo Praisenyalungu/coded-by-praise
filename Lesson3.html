@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 3 – CSS Basics</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; background: #f4f4f4; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    h1, h2 { color: #333; }
+    pre { background: #eee; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    .nav-buttons { margin-top: 20px; display: flex; justify-content: space-between; }
+    button { padding: 10px 20px; border: none; background: #007BFF; color: white; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .quiz { margin-top: 20px; }
+    .quiz label { display: block; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lesson 3: CSS Basics</h1>
+    <p>CSS (Cascading Style Sheets) is used to style and visually enhance your HTML content. It controls colors, layouts, fonts, spacing, and more.</p>
+
+    <h2>Key Concepts</h2>
+    <ul>
+      <li><strong>Selectors:</strong> Target HTML elements (e.g., <code>p</code>, <code>#id</code>, <code>.class</code>).</li>
+      <li><strong>Properties:</strong> Define what to change (e.g., <code>color</code>, <code>font-size</code>, <code>background-color</code>).</li>
+      <li><strong>Values:</strong> Set the appearance (e.g., <code>red</code>, <code>16px</code>).</li>
+      <li><strong>Inline vs Internal vs External CSS:</strong> Ways to apply CSS to HTML.</li>
+    </ul>
+
+    <h2>Example Code</h2>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      p {
+        color: blue;
+        font-size: 18px;
+      }
+      .highlight {
+        background-color: yellow;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;This is a styled paragraph.&lt;/p&gt;
+    &lt;p class="highlight"&gt;This paragraph is highlighted!&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h2>Interactive Quiz</h2>
+    <div class="quiz">
+      <p>1. Which CSS property changes the text color?</p>
+      <label><input type="radio" name="q1" value="font-size"> font-size</label>
+      <label><input type="radio" name="q1" value="color"> color</label>
+      <label><input type="radio" name="q1" value="background-color"> background-color</label>
+      <button onclick="checkAnswer()">Check Answer</button>
+      <p id="quiz-result"></p>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="lesson2.html"><button>&larr; Previous Lesson</button></a>
+      <a href="lesson4.html"><button>Next Lesson &rarr;</button></a>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const options = document.getElementsByName('q1');
+      let selected;
+      for (const opt of options) {
+        if (opt.checked) selected = opt.value;
+      }
+      const result = document.getElementById('quiz-result');
+      if (selected === 'color') {
+        result.textContent = "Correct! ✅";
+        result.style.color = "green";
+      } else {
+        result.textContent = "Oops! The correct answer is 'color'. ❌";
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>

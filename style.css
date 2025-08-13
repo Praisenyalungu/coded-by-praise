@@ -1,0 +1,282 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: #fff;
+  color: #333;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #003366 !important;
+}
+
+.navbar-brand,
+.nav-link {
+  font-weight: 600;
+  color: white !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #FFD700 !important;
+  outline: none;
+}
+
+/* ===== Home Section ===== */
+#home {
+  background: linear-gradient(to right, #003366, #00509e);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#home p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+#home .btn {
+  margin-top: 2rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#home .btn:hover,
+#home .btn:focus {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.35);
+  outline: none;
+}
+
+/* ===== Learn to Code / Project Cards ===== */
+.card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, color 0.3s ease;
+  background: #fff;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, #ffdde1, #ee9ca7);
+  color: #fff;
+}
+
+/* ===== Grace Nuggets Section ===== */
+#grace {
+  background: #fdf6f9;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#grace h2 {
+  font-size: 2.5rem;
+  color: #ff7eb3;
+  text-shadow: 1px 1px 2px #ffdbec;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+#grace h2::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  background: #ff7eb3;
+  transition: width 0.3s ease;
+}
+
+#grace h2:hover::after {
+  width: 100%;
+}
+
+#grace p#nugget {
+  font-style: italic;
+  margin: 1.5rem auto 0;
+  max-width: 600px;
+  font-size: 1.2rem;
+  background: #fff0f5;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+#grace p#nugget::before {
+  content: "💌";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 2.5rem;
+  opacity: 0.2;
+}
+
+#grace p#nugget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.2);
+}
+
+/* Extra Nugget Cards */
+#extra-nuggets .card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#extra-nuggets .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.25);
+}
+
+/* ===== Contact Section ===== */
+#contact {
+  padding: 4rem 2rem;
+}
+
+#contact form {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#contact form input,
+#contact form textarea {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#contact form input:focus,
+#contact form textarea:focus {
+  border-color: #ff7eb3;
+  box-shadow: 0 0 8px rgba(255, 126, 179, 0.3);
+  outline: none;
+}
+
+#contact form button {
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#contact form button:hover,
+#contact form button:focus {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.35);
+  outline: none;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: #002244;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Scroll Indicator ===== */
+.scroll-indicator {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.scroll-indicator:hover {
+  transform: scale(1.1);
+}
+
+/* ===== AOS Animation Helper ===== */
+[data-aos] {
+  opacity: 0;
+  transition-property: transform, opacity;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+}
+
+/* ===== Floating Tab Navigation ===== */
+#floating-nav {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.float-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.float-tab:hover,
+.float-tab:focus {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+.float-tab.active {
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.7);
+}
+
+/* ===== Fade-In Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  #floating-nav {
+    right: 10px;
+    gap: 8px;
+  }
+}
